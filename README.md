@@ -17,9 +17,9 @@ Yes please! I already have my hands full on creating a consistent cross-platform
 Added CMakeLists.txt file for zlib version 1.2.11
 * CMAKE_DEBUG_POSTFIX should be provided by the caller of the cmake script
 * Default installation paths:
-  * <CMAKE_INSTALL_PREFIX>/include (.h, .hpp)
+  * <CMAKE_INSTALL_PREFIX>/include/zlib (.h, .hpp)
   * <CMAKE_INSTALL_PREFIX>/share/man (.1, .3, .5)
   * <CMAKE_INSTALL_PREFIX>/bin (.exe, .dll)
   * <CMAKE_INSTALL_PREFIX>/lib (.so, .lib)
-  * <CMAKE_INSTALL_PREFIX>/lib/cmake/\<libname\> (.cmake, .pc) 
+  * <CMAKE_INSTALL_PREFIX>/lib/cmake/zlib (.cmake, .pc) 
   
