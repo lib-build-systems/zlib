@@ -8,11 +8,11 @@ set(VERSION "1.2.11")
 option(ASM686 "Enable building i686 assembly implementation")
 option(AMD64 "Enable building amd64 assembly implementation")
 
-set(INSTALL_BIN_DIR "${CMAKE_INSTALL_PREFIX}/bin" CACHE PATH "Installation directory for executables")
-set(INSTALL_LIB_DIR "${CMAKE_INSTALL_PREFIX}/lib" CACHE PATH "Installation directory for libraries")
-set(INSTALL_INC_DIR "${CMAKE_INSTALL_PREFIX}/include/zlib" CACHE PATH "Installation directory for headers")
-set(INSTALL_MAN_DIR "${CMAKE_INSTALL_PREFIX}/share/man" CACHE PATH "Installation directory for manual pages")
-set(INSTALL_CFG_DIR "${CMAKE_INSTALL_PREFIX}/lib/cmake/zlib" CACHE PATH "Installation directory for import files (.cmake and .pc) files")
+#set(INSTALL_BIN_DIR "${CMAKE_INSTALL_PREFIX}/bin" CACHE PATH "Installation directory for executables")
+#set(INSTALL_LIB_DIR "${CMAKE_INSTALL_PREFIX}/lib" CACHE PATH "Installation directory for libraries")
+#set(INSTALL_INC_DIR "${CMAKE_INSTALL_PREFIX}/include/zlib" CACHE PATH "Installation directory for headers")
+#set(INSTALL_MAN_DIR "${CMAKE_INSTALL_PREFIX}/share/man" CACHE PATH "Installation directory for manual pages")
+#set(INSTALL_CFG_DIR "${CMAKE_INSTALL_PREFIX}/lib/cmake/zlib" CACHE PATH "Installation directory for import files (.cmake and .pc) files")
 
 include(CheckTypeSize)
 include(CheckFunctionExists)
@@ -231,20 +231,17 @@ endif ()
 
 if (NOT SKIP_INSTALL_LIBRARIES AND NOT SKIP_INSTALL_ALL )
     install(TARGETS zlib zlibstatic
-            EXPORT zlib 
-            RUNTIME DESTINATION "${INSTALL_BIN_DIR}"
-            ARCHIVE DESTINATION "${INSTALL_LIB_DIR}"
-            LIBRARY DESTINATION "${INSTALL_LIB_DIR}" )
-    install(EXPORT zlib DESTINATION "${INSTALL_CFG_DIR}")
+            EXPORT zlib)
+    install(EXPORT zlib DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/zlib")
 endif ()
 
 if (NOT SKIP_INSTALL_HEADERS AND NOT SKIP_INSTALL_ALL )
-    install(FILES ${ZLIB_PUBLIC_HDRS} DESTINATION "${INSTALL_INC_DIR}")
+    install(FILES ${ZLIB_PUBLIC_HDRS} DESTINATION "${CMAKE_INSTALL_PREFIX}/include/zlib")
 endif ()
 
 if (NOT SKIP_INSTALL_FILES AND NOT SKIP_INSTALL_ALL )
-    install(FILES zlib.3 DESTINATION "${INSTALL_MAN_DIR}/man3")
-    install(FILES ${ZLIB_PC} DESTINATION "${INSTALL_CFG_DIR}")
+    install(FILES zlib.3 DESTINATION "${CMAKE_INSTALL_PREFIX}/share/man3")
+    install(FILES ${ZLIB_PC} DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/zlib")
 endif ()
 
 #============================================================================
