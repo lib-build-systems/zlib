@@ -193,7 +193,7 @@ target_include_directories(zlib
                            PUBLIC
 				                $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>
 				                $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
-  				                $<INSTALL_INTERFACE:include>
+  				                $<INSTALL_INTERFACE:include/zlib>
 			                )
 
 add_library(zlibstatic STATIC ${ZLIB_SRCS} ${ZLIB_ASMS} ${ZLIB_PUBLIC_HDRS} ${ZLIB_PRIVATE_HDRS})
@@ -201,7 +201,7 @@ target_include_directories(zlibstatic
                            PUBLIC
                                 $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>
                                 $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
-                                $<INSTALL_INTERFACE:include>
+                                $<INSTALL_INTERFACE:include/zlib>
                             )
 
 set_target_properties(zlib PROPERTIES DEFINE_SYMBOL ZLIB_DLL)
