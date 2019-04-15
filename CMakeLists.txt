@@ -12,7 +12,7 @@ set(INSTALL_BIN_DIR "${CMAKE_INSTALL_PREFIX}/bin" CACHE PATH "Installation direc
 set(INSTALL_LIB_DIR "${CMAKE_INSTALL_PREFIX}/lib" CACHE PATH "Installation directory for libraries")
 set(INSTALL_INC_DIR "${CMAKE_INSTALL_PREFIX}/include" CACHE PATH "Installation directory for headers")
 set(INSTALL_MAN_DIR "${CMAKE_INSTALL_PREFIX}/share/man" CACHE PATH "Installation directory for manual pages")
-set(INSTALL_CFG_DIR "${CMAKE_INSTALL_PREFIX}/lib/cmake" CACHE PATH "Installation directory for import files (.cmake and .pc) files")
+set(INSTALL_CFG_DIR "${CMAKE_INSTALL_PREFIX}/lib/cmake/zlib" CACHE PATH "Installation directory for import files (.cmake and .pc) files")
 
 include(CheckTypeSize)
 include(CheckFunctionExists)
