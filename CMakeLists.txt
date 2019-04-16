@@ -191,9 +191,9 @@ endif ()
 add_library(zlib SHARED ${ZLIB_SRCS} ${ZLIB_ASMS} ${ZLIB_DLL_SRCS} ${ZLIB_PUBLIC_HDRS} ${ZLIB_PRIVATE_HDRS})
 target_include_directories(zlib
                            PUBLIC
-				                $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>
-				                $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
-  				                $<INSTALL_INTERFACE:include/zlib>
+                                $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>
+                                $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+                                $<INSTALL_INTERFACE:include/zlib>
 			                )
 
 add_library(zlibstatic STATIC ${ZLIB_SRCS} ${ZLIB_ASMS} ${ZLIB_PUBLIC_HDRS} ${ZLIB_PRIVATE_HDRS})
@@ -231,8 +231,8 @@ endif ()
 
 if (NOT SKIP_INSTALL_LIBRARIES AND NOT SKIP_INSTALL_ALL )
     install(TARGETS zlib zlibstatic
-            EXPORT zlib)
-    install(EXPORT zlib DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/zlib")
+            EXPORT zlib-targets)
+    install(EXPORT zlib-targets DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/zlib")
 endif ()
 
 if (NOT SKIP_INSTALL_HEADERS AND NOT SKIP_INSTALL_ALL )
