@@ -234,16 +234,19 @@ if (NOT SKIP_INSTALL_LIBRARIES AND NOT SKIP_INSTALL_ALL )
             EXPORT zlib-targets)
     install(EXPORT zlib-targets
             NAMESPACE zlib::
-            DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/zlib")
+            DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/zlib")
 endif ()
 
 if (NOT SKIP_INSTALL_HEADERS AND NOT SKIP_INSTALL_ALL )
-    install(FILES ${ZLIB_PUBLIC_HDRS} DESTINATION "${CMAKE_INSTALL_PREFIX}/include/zlib")
+    install(FILES ${ZLIB_PUBLIC_HDRS}
+            DESTINATION "${CMAKE_INSTALL_PREFIX}/include/zlib")
 endif ()
 
 if (NOT SKIP_INSTALL_FILES AND NOT SKIP_INSTALL_ALL )
-    install(FILES zlib.3 DESTINATION "${CMAKE_INSTALL_PREFIX}/share/man3")
-    install(FILES ${ZLIB_PC} DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/zlib")
+    install(FILES zlib.3
+            DESTINATION "${CMAKE_INSTALL_MANDIR}3")
+    install(FILES ${ZLIB_PC}
+            DESTINATION "${CMAKE_INSTALL_LIBDIR}/lib/cmake/zlib")
 endif ()
 
 #============================================================================
