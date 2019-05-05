@@ -246,7 +246,7 @@ if (NOT SKIP_INSTALL_FILES AND NOT SKIP_INSTALL_ALL )
     install(FILES zlib.3
             DESTINATION "${CMAKE_INSTALL_MANDIR}3")
     install(FILES ${ZLIB_PC}
-            DESTINATION "${CMAKE_INSTALL_LIBDIR}/lib/cmake/zlib")
+            DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/zlib")
 endif ()
 
 #============================================================================
